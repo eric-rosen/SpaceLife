@@ -11,6 +11,10 @@ public class CollisionMerge : MonoBehaviour
         if (threshold_magnitude < collision.relativeVelocity.magnitude)
         {
             Debug.Log("Attached!");
+
+            FixedJoint2D fj = this.gameObject.AddComponent<FixedJoint2D>();
+            fj.connectedBody=collision.rigidbody;
+
         }
         else
         {
